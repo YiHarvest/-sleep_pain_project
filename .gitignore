@@ -1,0 +1,66 @@
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.dll
+
+# Packaging / build
+*.egg
+*.egg-info/
+.eggs/
+build/
+dist/
+pip-wheel-metadata/
+
+# Environments
+.venv/
+venv/
+ENV/
+env/
+.env
+.python-version
+
+# Test / coverage / tools cache
+.pytest_cache/
+.mypy_cache/
+.pyre/
+.pytype/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Jupyter / notebooks
+.ipynb_checkpoints/
+
+# Logs / temp
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# IDE / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# Project-specific exclusions (do not upload these directories)
+data_exploration/
+data_c32_exploration/
+data_c32_exploration/dataset/
+data_c32_exploration/outputs/
+EDA_analysis/dataset/
+outputs/
+
+# Large image exports (keep locally; do not version control)
+*.tif
+*.tiff
+EDA_analysis/imputation_plots/*.tif
+EDA_analysis/imputation_plots/*.tiff
+EDA_analysis/eda_missing/*.tif
+EDA_analysis/eda_missing/*.tiff

@@ -1,0 +1,3 @@
+最终建模数据集插补方法: MICE (IterativeImputer)
+参数: max_iter=10, random_state=42
+选择理由: MICE能更好地保持变量间的相关性结构

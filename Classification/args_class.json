@@ -1,0 +1,35 @@
+{
+  "flags": {
+    "flag_feat_selection": true,
+    "flag_gridsearch": true,
+    "flag_ROCAUC": false,
+    "flag_LOSO": true
+  },
+  "signal": {
+    "EEG":true,
+    "SCH":true,
+    "SCF":true
+  },
+  "feat_selection": {
+    "corr_thresh": 0.9,
+    "method": "pearson",
+    "dropfeat_path": "features_correlated_to_drop"
+  },
+    "gridsearch": {
+    "area": "mp",
+    "gridsearch_path": "hyperparameter_testing"
+  },
+  "LOSO": {
+    "loso_path": "best_params_features_automatic",
+    "metric": "test_accuracy"
+  },
+    "XAI": {
+    "shap_flag_XGB": true,
+      "feature_importance_flag_XGB": false,
+      "selectfeat_path": "features_shap_select",
+      "selectfeat_num": 20,
+    "shap_flag_RF": false
+  }
+}
+
+

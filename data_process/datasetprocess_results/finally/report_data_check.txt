@@ -1,0 +1,100 @@
+# 数据质量检查报告
+
+**生成时间**: 2025-09-19 19:22:48
+
+## 1. 数据基本信息
+
+- **数据文件**: d:\yiqy\sleepProjexts\发文章版_疼痛二分类任务\机器学习-英文版1.49- IL-6 CRP\dataset\sleep_15_20%缺失值.csv
+- **数据形状**: 481 × 17
+- **重复行数**: 0
+- **生物指标**: IL6, IL10, TNFalpha, CRP, ACTH, PTC
+
+## 2. 缺失值情况
+
+| 特征 | 缺失数量 | 缺失比例(%) | 处理建议 |
+|------|----------|-------------|----------|
+| TNFalpha | 96 | 20.0 | prefer MICE/IterativeImputer; compare with median |
+| IL10 | 95 | 19.8 | prefer MICE/IterativeImputer; compare with median |
+| PTC | 95 | 19.8 | prefer MICE/IterativeImputer; compare with median |
+| IL6 | 20 | 4.2 | median impute acceptable |
+| CRP | 3 | 0.6 | median impute acceptable |
+| ACTH | 2 | 0.4 | median impute acceptable |
+| Chronic_pain | 0 | 0.0 | median impute acceptable |
+| CaseNumber | 0 | 0.0 | median impute acceptable |
+| Depression_18 | 0 | 0.0 | median impute acceptable |
+| Anxiety_14 | 0 | 0.0 | median impute acceptable |
+Bone_joint_disease,Sex,Drinking_status,Health_status_3groups,Age,Education,Sitting_time  都没有缺失
+
+## 3. 高相关性特征对 (|r| > 0.8)
+
+未发现高相关性特征对。
+
+## 4. 方差膨胀因子 (VIF)
+
+| 特征 | VIF值 | 评估 |
+|------|-------|------|
+| IL6 | 1.32 | 可接受 |
+| IL10 | 1.04 | 可接受 |
+| TNFalpha | 1.03 | 可接受 |
+| CRP | 1.33 | 可接受 |
+| ACTH | 1.40 | 可接受 |
+| PTC | 1.45 | 可接受 |
+
+**VIF阈值说明**:
+- VIF > 10: 严重多重共线性，建议删除或合并
+- VIF > 5: 中等多重共线性，需要注意
+- VIF ≤ 5: 可接受水平
+
+## 5. 统计检验结果摘要
+
+**FDR校正后显著的特征**:
+
+| 特征 | 检验方法 | p值(校正) | 效应量 |
+|------|----------|-----------|--------|
+| ACTH | Mann-Whitney U | 0.0425 | -0.156 |
+
+## 6. 数据处理建议
+
+### 6.1 插补策略
+- 已生成两种插补结果：中位数插补和MICE插补
+- 推荐使用MICE插补结果进行建模（保持变量间相关性）
+
+### 6.2 特征工程建议
+- 建议对以下特征进行log1p变换以改善正态性：
+  - IL6
+  - IL10
+  - TNFalpha
+  - CRP
+  - ACTH
+
+### 6.3 多重共线性处理
+- 监控VIF > 5的特征
+- 考虑主成分分析或特征选择方法
+- 在建模时使用正则化方法（如Ridge回归）
+
+## 7. 输出文件清单
+
+### 7.1 数据文件
+- `00_metadata.txt`: 分析元数据
+- `01_label_counts.csv`: 标签分布统计
+- `02_missing_summary.csv`: 缺失值汇总
+- `03_normality_levene_results.csv`: 正态性和方差齐性检验
+- `04_univariate_tests.csv`: 单变量统计检验
+- `05_outliers_by_feature.csv`: 离群值详情
+- `06_corr_matrix.csv`: 相关矩阵
+- `07_vif.csv`: 方差膨胀因子
+- `08_univariate_auc.csv`: 单变量AUC分析
+
+### 7.2 插补数据
+- `cleaned_imputed_data_median.csv`: 中位数插补结果
+- `cleaned_imputed_data_mice.csv`: MICE插补结果
+- `finally/cleaned_imputed_data_for_modeling.csv`: 推荐建模数据  -----》 xueye_linchuang_bone.csv
+
+### 7.3 可视化图表
+- `plots/`: 包含所有分析图表
+  - 标签分布图
+  - 缺失值图表
+  - 特征分布图
+  - 分组比较图
+  - 相关性热图
+  - ROC曲线图

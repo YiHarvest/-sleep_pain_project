@@ -1,0 +1,35 @@
+=== 数据质量检查元数据 ===
+
+基本信息:
+读取时间: 2025-09-19 19:22:30
+脚本名称: data_quality_check.py
+脚本版本: 1.0
+输入文件: d:\yiqy\sleepProjexts\发文章版_疼痛二分类任务\机器学习-英文版1.49- IL-6 CRP\dataset\sleep_15_20%缺失值.csv
+数据形状: 481 × 10
+重复行数: 0
+
+列信息:
+列名: CaseNumber, Chronic_pain, Depression_18, Anxiety_14, IL6, IL10, TNFalpha, CRP, ACTH, PTC
+
+数据类型:
+  CaseNumber: int64
+  Chronic_pain: int64
+  Depression_18: int64
+  Anxiety_14: int64
+  IL6: float64
+  IL10: float64
+  TNFalpha: float64
+  CRP: float64
+  ACTH: float64
+  PTC: float64
+
+参数设置:
+随机种子: 42
+显著性水平: 0.05
+VIF阈值: 5.0
+偏度阈值: 1.0
+插补方法: SimpleImputer(median) + IterativeImputer
+
+插补参数:
+  median: strategy=median
+  mice: max_iter=10, random_state=42

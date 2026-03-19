@@ -1,0 +1,11 @@
+feature,missing_count,missing_pct,n_nonmissing,recommended_action
+TNFalpha,96,19.95841995841996,385,prefer MICE/IterativeImputer; compare with median
+IL10,95,19.75051975051975,386,prefer MICE/IterativeImputer; compare with median
+PTC,95,19.75051975051975,386,prefer MICE/IterativeImputer; compare with median
+IL6,20,4.158004158004158,461,median impute acceptable
+CRP,3,0.6237006237006237,478,median impute acceptable
+ACTH,2,0.4158004158004158,479,median impute acceptable
+Chronic_pain,0,0.0,481,median impute acceptable
+CaseNumber,0,0.0,481,median impute acceptable
+Depression_18,0,0.0,481,median impute acceptable
+Anxiety_14,0,0.0,481,median impute acceptable

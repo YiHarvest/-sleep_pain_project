@@ -1,0 +1,32 @@
+=== 缺失值处理决策 ===
+
+TNFalpha: MICE (IterativeImputer) (缺失率: 20.0%)
+  建议: prefer MICE/IterativeImputer; compare with median
+
+IL10: MICE (IterativeImputer) (缺失率: 19.8%)
+  建议: prefer MICE/IterativeImputer; compare with median
+
+PTC: MICE (IterativeImputer) (缺失率: 19.8%)
+  建议: prefer MICE/IterativeImputer; compare with median
+
+IL6: median impute (缺失率: 4.2%)
+  建议: median impute acceptable
+
+CRP: median impute (缺失率: 0.6%)
+  建议: median impute acceptable
+
+ACTH: median impute (缺失率: 0.4%)
+  建议: median impute acceptable
+
+Chronic_pain: median impute (缺失率: 0.0%)
+  建议: median impute acceptable
+
+CaseNumber: median impute (缺失率: 0.0%)
+  建议: median impute acceptable
+
+Depression_18: median impute (缺失率: 0.0%)
+  建议: median impute acceptable
+
+Anxiety_14: median impute (缺失率: 0.0%)
+  建议: median impute acceptable
+
