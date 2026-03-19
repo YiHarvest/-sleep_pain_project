@@ -40,14 +40,13 @@
 - 目标列：自动识别二分类标签（默认为 Chronic_pain；若不存在则根据常见列名检测）
 - 主要特征（与脚本中 SELECTED_FEATURES 同步，存在即用）：
   - IL6、IL10、TNFalpha、CRP、ACTH、PTC
-  - Depression_18、Anxiety_14
   - 若干比值特征：IL6/IL10、TNFalpha/IL10、CRP/IL10、PTC/ACTH、PTC/IL6、PTC/CRP、IL6/TNFalpha、CRP/IL6、ACTH/IL6
-- 预处理：数值缺失中位数填充 + 标准化；类别/二元特征自动识别与 One-Hot
+- 预处理：数值缺失VAE + 标准化；类别/二元特征自动识别与 One-Hot
 
 ## 指标与可视化
 - 指标：ROC AUC、PR AUC、Brier、Accuracy、Precision/PPV、Recall/Sensitivity、Specificity、F1、NPV、Youden
 - 可视化：
-  - 5 折 CV 的小提琴图（每模型、各指标），标题统一为 Times New Roman 字体
+  - 5 折 CV 的小提琴图（每模型、各指标）
   - 测试集 Bootstrap 的直方图与正态拟合曲线
 - 阈值策略：
   - F1 最优（根据验证集或 OOF 动态搜索）
@@ -77,7 +76,7 @@
 2. 运行 stacking_competition.py 生成模型与汇总，检查 cv_results 与 violin 图
 3. 运行 competition.py 比较基线模型并生成对应可视化
 4. 运行 bootstrap_rank_platt.py 生成测试集的 CI 与直方图
-5. 若需要固定图中文字（Times New Roman），确保系统已安装该字体
+
 
 ## 依赖与环境
 - Python 3.10+（建议）
