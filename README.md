@@ -1,4 +1,4 @@
-# 疼痛二分类任务（HemoPain）项目说明
+# 失眠患者疼痛分类任务（HemoPain）项目说明
 
 本项目旨在基于血液生物标志物与部分临床变量，对慢性疼痛进行二分类预测，并提供稳健的模型评估与可视化。
 
@@ -82,11 +82,11 @@
 - Python 3.10+（建议）
 - 主要依赖：numpy、pandas、scikit-learn、scipy、seaborn、matplotlib、joblib
 - 可选：catboost（若启用 CatBoost 相关功能）
-- Windows 环境下已针对 Matplotlib/Seaborn 统一字体为 Times New Roman
+
 
 ## 参考与说明
 - 实验设计与研究背景：详见 PDF  
-  [2026.03.16.-易秋月-疼痛论文初稿第四版(3).pdf](file:///d:/yiqy/sleepProjexts/发文章版_疼痛二分类任务/最终版本/2026.03.16.-易秋月-疼痛论文初稿第四版(3).pdf)
+  [2026.03.16.-YHarvest-疼痛论文.pdf]
 - 关键脚本：  
   [competition.py](file:///d:/yiqy/sleepProjexts/发文章版_疼痛二分类任务/最终版本/competition.py)  
   [stacking_competition.py](file:///d:/yiqy/sleepProjexts/发文章版_疼痛二分类任务/最终版本/stacking_competition.py)  
